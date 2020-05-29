@@ -6,6 +6,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.android.architecture.blueprints.todoapp.getOrAwaitValue
 import org.hamcrest.Matchers.*
 import org.junit.Assert.*
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -17,10 +18,15 @@ class TasksViewModelTest {
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
 
+    private lateinit var tasksViewModel: TasksViewModel
+
+    @Before
+    fun setupViewModel() {
+        tasksViewModel = TasksViewModel(ApplicationProvider.getApplicationContext())
+    }
+
     @Test
     fun addNewTask_setNewTaskEvent() {
-
-        val tasksViewModel = TasksViewModel(ApplicationProvider.getApplicationContext())
 
         tasksViewModel.addNewTask()
 
@@ -31,8 +37,6 @@ class TasksViewModelTest {
 
     @Test
     fun setFilterAllTasks_tasksAddViewVisible() {
-
-        val tasksViewModel = TasksViewModel(ApplicationProvider.getApplicationContext())
 
         tasksViewModel.setFiltering(TasksFilterType.ALL_TASKS)
 
