@@ -7,6 +7,7 @@ import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.util.Observer
 
 @RunWith(AndroidJUnit4::class)
 class TasksViewModelTest {
