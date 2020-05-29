@@ -30,4 +30,15 @@ class TasksViewModelTest {
         assertThat(value.getContentIfNotHandled(), (not(nullValue())))
 
     }
+
+    @Test
+    fun setFilterAllTasks_tasksAddViewVisible() {
+
+        // TODO: Given a fresh ViewModel
+
+        // TODO: When the filter type is ALL_TASKS
+
+        // TODO: Then the "Add task" action is visible
+
+    }
 }
