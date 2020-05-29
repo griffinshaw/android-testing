@@ -1,16 +1,20 @@
 package com.example.android.architecture.blueprints.todoapp.tasks
 
+import androidx.test.core.app.ApplicationProvider
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.*
 import org.junit.Test
+import org.junit.runner.RunWith
 
+@RunWith(AndroidJUnit4::class)
 class TasksViewModelTest {
 
     @Test
     fun addNewTask_setNewTaskEvent() {
-        // TODO: Given a fresh TasksViewModel
 
+        val tasksViewModel = TasksViewModel(ApplicationProvider.getApplicationContext())
 
-        // TODO: When adding a new task
+        tasksViewModel.addNewTask()
 
 
         // TODO: Then the new task event is triggered
