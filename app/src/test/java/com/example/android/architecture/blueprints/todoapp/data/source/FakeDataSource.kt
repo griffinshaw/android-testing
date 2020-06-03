@@ -3,14 +3,18 @@ package com.example.android.architecture.blueprints.todoapp.data.source
 import androidx.lifecycle.LiveData
 import com.example.android.architecture.blueprints.todoapp.data.Result
 import com.example.android.architecture.blueprints.todoapp.data.Task
+import java.lang.Exception
 
-class FakeDataSource: TasksDataSource {
+class FakeDataSource(var tasks: MutableList<Task>? = mutableListOf()): TasksDataSource {
     override fun observeTasks(): LiveData<Result<List<Task>>> {
         TODO("Not yet implemented")
     }
 
     override suspend fun getTasks(): Result<List<Task>> {
-        TODO("Not yet implemented")
+        if (tasks == null) {
+            return Result.Error(Exception("Tasks was null"))
+        }
+        return Result.Success(ArrayList(tasks))
     }
 
     override suspend fun refreshTasks() {
