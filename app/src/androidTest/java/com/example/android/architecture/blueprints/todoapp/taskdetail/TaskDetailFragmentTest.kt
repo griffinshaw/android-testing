@@ -57,4 +57,14 @@ class TaskDetailFragmentTest {
         onView(withId(R.id.task_detail_complete_checkbox)).check(matches(isDisplayed()))
         onView(withId(R.id.task_detail_complete_checkbox)).check(matches(not(isChecked())))
     }
+
+    @Test
+    fun completedTaskDetails_DisplayedInUi() = runBlockingTest{
+        // GIVEN - Add completed task to the DB
+
+        // WHEN - Details fragment launched to display task
+
+        // THEN - Task details are displayed on the screen
+        // make sure that the title/description are both shown and correct
+    }
 }
